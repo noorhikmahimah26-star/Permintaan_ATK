@@ -55,6 +55,7 @@ move_uploaded_file($tmp, "../upload/nota/" . $nota);
 <div class="container mt-4">
 
     <h4 class="mb-3">ATK | Pembelian ATK</h4>
+        
 
     <div class="card shadow-sm">
         <div class="card-body">
@@ -121,7 +122,16 @@ move_uploaded_file($tmp, "../upload/nota/" . $nota);
 
         </div>
     </div>
-
+ <a href="dashboard.php"
+   class="btn btn-danger btn-sm"
+   style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 999;
+   ">
+   Kembali ke Dashboard
+</a>
 </div>
 </body>
 </html>

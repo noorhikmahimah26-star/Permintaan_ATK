@@ -2,8 +2,6 @@
 session_start();
 include '../koneksi.php';
 
-
-
 $data = mysqli_query($conn," SELECT id, nama_kategori, satuan, stok, foto FROM kategori_atk ORDER BY id ASC ");
 ?>
 
@@ -15,19 +13,35 @@ $data = mysqli_query($conn," SELECT id, nama_kategori, satuan, stok, foto FROM k
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 
 <body>
 <div class="container-fluid p-4">
+    <a href="dashboard.php"
+   class="btn btn-danger btn-sm"
+   style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+   ">
+   Kembali ke Dashboard
+</a>
 
 <!-- HEADER -->
 <div class="d-flex justify-content-between mb-3">
-    <h5>Master | Kategori ATK</h5>
+
+    <!-- KIRI -->
+    <div>
+        <h5>Master | Kategori ATK</h5>
+    </div>
 
     <!-- TAMBAH -->
     <a href="kategori_tambah.php" class="btn btn-primary">
         <i class="bi bi-plus-lg"></i>
     </a>
+
 </div>
 
 <div class="card shadow-sm">
@@ -49,7 +63,6 @@ $data = mysqli_query($conn," SELECT id, nama_kategori, satuan, stok, foto FROM k
 <tr>
     <td><?= $no++ ?></td>
 
-    <!-- KLIK NAMA → FOTO -->
     <td>
         <a href="#"
            class="fw-semibold text-primary text-decoration-none"
@@ -103,7 +116,6 @@ $data = mysqli_query($conn," SELECT id, nama_kategori, satuan, stok, foto FROM k
     </div>
   </div>
 </div>
-
 <?php } ?>
 </tbody>
 </table>

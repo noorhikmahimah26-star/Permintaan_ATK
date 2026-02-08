@@ -30,9 +30,10 @@ $data = mysqli_query($conn, $query);
     <div class="d-flex justify-content-between mb-3">
         <h5>ATK | Daftar Pembelian ATK</h5>
 
-        <a href="pembelian_atk.php" class="btn btn-primary">
-            <i class="bi bi-plus-lg"></i> Tambah Pembelian
-        </a>
+    <a href="pembelian_atk.php" class="btn btn-danger">
+    <i class="bi bi-plus-lg"></i> Tambah Pembelian
+    </a>
+
     </div>
 
     <div class="card shadow-sm">
@@ -67,8 +68,8 @@ $data = mysqli_query($conn, $query);
 
                     <td class="text-center">
                         <?php if(!empty($row['nota'])): ?>
-                            <button class="btn btn-sm btn-info text-white" data-bs-toggle="modal" data-bs-target="#notaModal<?= $row['id'] ?>">
-                                <i class="bi bi-file-earmark-image"></i> Lihat
+                            <button class="btn btn-sm btn-info text-black" data-bs-toggle="modal" data-bs-target="#notaModal<?= $row['id'] ?>">
+                                <i class="bi bi-file-earmark-image text-danger"></i> Lihat
                             </button>
                         <?php else: ?>
                             <span class="text-muted small">Tidak ada</span>
@@ -84,7 +85,7 @@ $data = mysqli_query($conn, $query);
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                       </div>
                       <div class="modal-body text-center">
-                        <img src="../upload/nota/<?= $row['nota'] ?>" class="img-fluid rounded shadow">
+                        <img src="../uploads/nota/<?= $row['nota'] ?>" class="img-fluid rounded shadow">
                       </div>
                     </div>
                   </div>
@@ -96,6 +97,17 @@ $data = mysqli_query($conn, $query);
         </div>
     </div>
 </div>
+
+<a href="dashboard.php"
+   class="btn btn-danger btn-sm"
+   style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+   ">
+   Kembali ke Dashboard
+</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

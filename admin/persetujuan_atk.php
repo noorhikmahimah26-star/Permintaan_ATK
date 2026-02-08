@@ -66,13 +66,13 @@ $data = mysqli_query($conn, $query);
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h4><i class="bi bi-list-check text-danger"></i> Semua Riwayat & Persetujuan</h4>
-        <a href="dashboard.php" class="btn btn-secondary btn-sm">Kembali</a>
+        <a href="dashboard.php" class="btn btn-danger btn-sm">Kembali ke dashboard</a>
     </div>
 
     <div class="card shadow-sm border-0">
         <div class="card-body p-0">
             <table class="table table-hover mb-0">
-                <thead class="table-dark">
+                <thead class="table-primary">
                     <tr>
                         <th>Tanggal</th>
                         <th>Karyawan</th>
@@ -107,8 +107,8 @@ $data = mysqli_query($conn, $query);
                         <td class="small text-muted"><?= $row['keterangan'] ?></td>
                         <td class="text-center">
                             <?php if($row['status'] == 'Pending'): ?>
-                                <a href="persetujuan_atk.php?id=<?= $row['id'] ?>&aksi=setuju" class="btn btn-outline-success btn-sm">Setuju</a>
-                                <a href="persetujuan_atk.php?id=<?= $row['id'] ?>&aksi=tolak" class="btn btn-outline-danger btn-sm">Tolak</a>
+                                <a href="persetujuan_atk.php?id=<?= $row['id'] ?>&aksi=approve" class="btn btn-outline-success btn-sm">approve</a>
+                                <a href="persetujuan_atk.php?id=<?= $row['id'] ?>&aksi=cancel" class="btn btn-outline-danger btn-sm">Cancel</a>
                             <?php else: ?>
                                 <button class="btn btn-light btn-sm" disabled><i class="bi bi-lock-fill"></i> Selesai</button>
                             <?php endif; ?>

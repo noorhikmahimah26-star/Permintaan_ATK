@@ -105,7 +105,7 @@ $total_tolak = mysqli_fetch_assoc($q_tolak)['total'];
         <div class="col-md-3">
             <div class="card info-box" style="background-color: #20c997;">
                 <div class="icon"><i class="bi bi-check-circle"></i></div>
-                <p>Disetujui</p>
+                <p>Diapprove</p>
                 <h2><?= $total_setuju; ?></h2>
             </div>
         </div>
@@ -121,7 +121,7 @@ $total_tolak = mysqli_fetch_assoc($q_tolak)['total'];
         <div class="col-md-3">
             <div class="card info-box" style="background-color: #dc3545;">
                 <div class="icon"><i class="bi bi-x-circle"></i></div>
-                <p>Ditolak</p>
+                <p>Dicancel</p>
                 <h2><?= $total_tolak; ?></h2>
             </div>
         </div>
