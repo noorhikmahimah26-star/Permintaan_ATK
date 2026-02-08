@@ -7,6 +7,7 @@ $total_harga = 0;
 if (isset($_POST['simpan'])) {
     $tanggal  = $_POST['tanggal'];
     $kategori = $_POST['kategori']; 
+    $vendor = $_POST['vendor'];
     $qty      = $_POST['qty'];
     $harga    = $_POST['harga'];
 
@@ -19,6 +20,8 @@ if (isset($_POST['simpan'])) {
 
     if (!empty($nota)) {
         move_uploaded_file($tmp, "../uploads/" . $nota);
+        // Ubah bagian move_uploaded_file di pembelian_atk.php agar sinkron
+move_uploaded_file($tmp, "../upload/nota/" . $nota);
     }
 
     // SIMPAN PEMBELIAN
